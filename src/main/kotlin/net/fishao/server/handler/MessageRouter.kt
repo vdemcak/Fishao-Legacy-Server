@@ -39,11 +39,12 @@ class MessageRouter(private val registry: MessageRegistry) {
         }
 
         val handler = registry.getHandler(message.javaClass)
+        println("Routing message to handler: ${handler?.javaClass?.simpleName ?: "None"}")
 
         if (handler != null) {
             handler.handle(session, message)
         } else {
-            println("No handler registered for: ${message.javaClass.name}")
+            println("No handler registered")
         }
     }
 }

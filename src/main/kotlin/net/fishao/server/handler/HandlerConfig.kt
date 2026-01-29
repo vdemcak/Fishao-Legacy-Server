@@ -25,6 +25,10 @@ object HandlerConfig {
     private fun registerHandlers(registry: MessageRegistry) {
         //@formatter:off
         registry.registerHandler("cr.LoginReq", LoginHandler())
+        registry.registerHandler("cr.EnterWorld", EnterWorldHandler())
+        registry.registerHandler("cr.GetWorldMapDataReq", WorldMapDataHandler())
+
+        // API Handlers
         registry.registerHandler("api.announcements.init.RequestAnnouncements", AnnouncementsInitHandler())
         registry.registerHandler("api.clubs.init.RequestClubsInit",ClubsInitHandler())
         registry.registerHandler("api.monsterFishes.init.RequestMonsterFishesInit",MonsterFishesInitHandler())
@@ -52,6 +56,10 @@ object HandlerConfig {
     private fun registerResponseAliases(registry: MessageRegistry) {
         //@formatter:off
         registry.registerResponseAlias(LoginSuccessResp::class, "sr.LoginSuccessResp")
+        registry.registerResponseAlias(UpdateResp::class, "sr.UpdateResp")
+        registry.registerResponseAlias(WorldMapDataResp::class, "sr.WorldMapDataResp")
+
+        // API Response Aliases
         registry.registerResponseAlias(ResponseAnnouncements::class, "api.announcements.init.ResponseAnnouncements")
         registry.registerResponseAlias(ResponseClubsInit::class, "api.clubs.init.ResponseClubsInit")
         registry.registerResponseAlias(ResponseMonsterFishesInit::class, "api.monsterFishes.init.ResponseMonsterFishesInit")

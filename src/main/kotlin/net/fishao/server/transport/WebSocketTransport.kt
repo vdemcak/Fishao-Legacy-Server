@@ -35,8 +35,6 @@ class WebSocketTransport(
     private suspend fun processFrame(session: WebSocketSessionAdapter, frame: Frame.Binary) {
         val rawData = frame.readBytes()
 
-        println("[WS TRANSPORT] Received frame: ${String(rawData, Charsets.US_ASCII).replace('\n', ' ')}")
-
         try {
             if (rawData.size < headerSize) {
                 println("[WS TRANSPORT] Frame too small: ${rawData.size} bytes")
