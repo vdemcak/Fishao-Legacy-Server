@@ -27,6 +27,7 @@ object HandlerConfig {
         registry.registerHandler("cr.LoginReq", LoginHandler())
         registry.registerHandler("cr.EnterWorld", EnterWorldHandler())
         registry.registerHandler("cr.GetWorldMapDataReq", WorldMapDataHandler())
+        registry.registerHandler("cr.EnterLocation", EnterLocationHandler())
 
         // API Handlers
         registry.registerHandler("api.announcements.init.RequestAnnouncements", AnnouncementsInitHandler())
@@ -58,7 +59,7 @@ object HandlerConfig {
         registry.registerResponseAlias(LoginSuccessResp::class, "sr.LoginSuccessResp")
         registry.registerResponseAlias(UpdateResp::class, "sr.UpdateResp")
         registry.registerResponseAlias(WorldMapDataResp::class, "sr.WorldMapDataResp")
-
+        registry.registerResponseAlias(EnterLocationSuccessResp::class, "sr.EnterLocationSuccessResp")
         // API Response Aliases
         registry.registerResponseAlias(ResponseAnnouncements::class, "api.announcements.init.ResponseAnnouncements")
         registry.registerResponseAlias(ResponseClubsInit::class, "api.clubs.init.ResponseClubsInit")

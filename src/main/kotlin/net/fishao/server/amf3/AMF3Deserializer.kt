@@ -76,6 +76,7 @@ class AMF3Deserializer(
             instance = kClass.createInstance()
             isTyped = true
         } else {
+            println("Warning: No class registered for AMF3 type '${traits.className}', using dynamic object")
             instance = HashMap<String, Any?>()
             isTyped = false
         }
