@@ -12,6 +12,7 @@ class FishingLineInitHandler : MessageHandler<RequestFishingLineInit> {
         val response = ResponseFishingLineInit(
             currentLevel = 1,
             timeToNextUpgrade = 0,
+            color = "white",
             levelsData = """
                 [
                   { "number": 1, "price_upgrade": 0,   "line_length": 40,  "time_upgrade": 0,     "available_colors": ["white"] },
@@ -36,7 +37,6 @@ class FishingLineInitHandler : MessageHandler<RequestFishingLineInit> {
                   { "number": 20, "price_upgrade": 399,"line_length": 1750,"time_upgrade": 777600, "available_colors": ["white","blue_light","green_light","silver","gold"] }
                 ]
             """.trimIndent(),
-            color = "default"
         ).applyCommon(request)
 
         session.send(response)
